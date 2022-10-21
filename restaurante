@@ -1,0 +1,61 @@
+from itertools import product
+from producto import producto
+from mesa import mesa
+
+class restaurante:
+    
+    
+    #atributos y constructor
+    def __init__(self):
+        self._nombre = "resturante programacion"
+        self._NIT = "8567-02"
+        self._mesa = []
+        
+    #producto mas costoso de cada mesa
+    def productomascostososervido(self):
+            
+        productomascostososervido = producto()
+       
+        for mesa in self._mesa:
+            productomascarodelamesa = mesa.obtenerproductomascostoso
+            if productomascostososervido.getprecio()< productomascarodelamesa.getprecio():
+                productomascostososervido = productomascarodelamesa
+             
+        return productomascostososervido
+ 
+    def abrirmesa(self, pmesa=mesa()):
+        self._mesas.append(pmesa)
+        
+ #Inicialisar sistema del restaurante con el caso del primer corte
+    def inicializacionMesas(self):
+        
+        #Crear la primera mesa del caso
+        mesa1 = mesa(nombre="Mesa 1")
+        #Adicionar los productos
+        mesa1.adicionarProducto(pNombre="Café",pPrecio=2000)
+        mesa1.adicionarProducto(producto(nombre="Helado",precio=3000))
+        mesa1.adicionarProducto(pNombre="Agua con gas",pPrecio=2300)
+        #Abrirla en el restaurante
+        self.abrirMesa(pMesa=mesa1)
+        
+        #Crear la primera mesa del caso
+        mesa2 = mesa(nombre="Mesa 2")
+        #Adicionar los productos
+        mesa2.adicionarProducto(pNombre="Papas gratindas",pPrecio=8000)        
+        mesa2.adicionarProducto(pNombre="Banan split",pPrecio=7000)        
+        #Abrirla en el restaurante
+        self.abrirMesa(pMesa=mesa2)
+        
+        #Crear la primera mesa del caso
+        mesa3 = mesa(nombre="Mesa 3")
+        #Adicionar los productos
+        mesa3.adicionarProducto(pNombre="Té helado",pPrecio=2560)        
+        mesa3.adicionarProducto(pNombre="Tortilla huevo",pPrecio=5300)        
+        mesa3.adicionarProducto(pNombre="Café",pPrecio=2000)        
+        #Abrirla en el restaurante
+        self.abrirMesa(pMesa=mesa3)
+        
+    #Mostrar mesas por consola
+    def mostrarMesasConsola(self):
+        for mesa in self.__Mesas:
+            mesa.mostrarMesaConsola()
